@@ -1,0 +1,16 @@
+#!/bin/bash
+# Version 1
+# Run yWriter using Wine, pipe all output to log OR null
+
+YW_DIR=$HOME/yWriter5
+E_XCD=66
+
+cd $YW_DIR/bin || {
+	echo "Can't change to yWriter installation folder $YW_DIR" >&2
+	exit $E_XCD;
+}
+
+wine yWriter5.exe > /dev/null 2>&1
+
+cd $HOME 
+
